@@ -3,6 +3,6 @@ title: Home
 layout: home
 ---
 
-_Malleable Audio From Modular Devices_
+Modular Devices Malleable Audio: creating _objet d'bruit_ since 2018.
 
-Manufacturers of objet d'bruit since 2018. 
+### Updates:

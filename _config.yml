@@ -18,6 +18,7 @@ plugins:
 footer: mdma
 header_pages:
   - index.md
+  - about.md
   - projects.md
   - documentation.md
   - repos.md
