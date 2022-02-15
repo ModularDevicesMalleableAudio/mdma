@@ -22,10 +22,11 @@ The MSEQ is a multiplayer 11 channel polyphonic and 3 channel drum sequencer, wi
 
 ### MFB Filterbank
 
-First out of the lab, a Buchla 296e inspired filterbank / spectral transfer / vococder, using the [daisy][daisy-url] ecosystem, designed for the daisy field hardware. 
+First out of the lab, a [Buchla 296e inspired filterbank / spectral transfer / vococder][mfb-github], using the [daisy][daisy-url] ecosystem, designed for the daisy field hardware. 
 
-More detail, code, and videos to come!
+More detail and videos to come!
 
 [malleable-808-sequencer]: https://malleable-808-sequencer.readthedocs.io
 [mseq-gitlab]: https://gitlab.com/malleable808/sequencer
+[mfb-github]: https://github.com/ModularDevicesMalleableAudio/MFB
 [daisy-url]: https://www.electro-smith.com/daisy
