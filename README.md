@@ -1,2 +1,3 @@
-# mdma.github.io
-Website for ModularDevicesMalleableAudio
+# mdma
+
+Website for ModularDevicesMalleableAudio.github.io/mdma
