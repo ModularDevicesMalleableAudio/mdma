@@ -5,6 +5,11 @@ permalink: /documentation/
 ---
 
 ## Here be docs
-- [MSEQ][malleable-808-sequencer]
+This is where you'll find the documentation.
 
-[malleable-808-sequencer]: https://malleable-808-sequencer.readthedocs.io
+## MSEQ
+- [Setup][malleable-808-sequencer-setup]
+- [Manual][malleable-808-sequencer-manual]
+
+[malleable-808-sequencer-setup]: /mdma/documentation/MSEQ/setup
+[malleable-808-sequencer-manual]: /mdma/documentation/MSEQ/manual
