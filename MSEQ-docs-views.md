@@ -1,6 +1,6 @@
 ---
 layout: page
-title: MSEQ docs - setup
+title: MSEQ manual
 permalink: /documentation/MSEQ/manual
 ---
 
@@ -64,10 +64,10 @@ Beyond the normal pressing of buttons, the launch control provides you with 4 ad
 </div>
 <br>
 
-| LC button | [Trig Input](#note-trigger-input) | [LC Bottom Buttons](#lc-bottom-buttons) | [Row Mute](#mutes) |
+| LC button | [Trig Input](#note-trigger-input) | [LC Bottom Button](#lc-bottom-buttons) | [Row Mute](#mutes) |
 |-|-|-|-|
 | **Device (Shift)** | Percentage chance trigger input | Controls sequencer octave up/down | - |
-| **Mute** | Muted trigger input | Controls jam keyboard octave up/down | Toggles drone mute status for that row |
+| **Mute** | Inverse mod chance (1-3:4) | Controls jam keyboard octave up/down | Toggles drone mute status for that row |
 | **Solo** | Tied note trigger input | - | Toggles legato mute status for that row |
 | **Record Arm** | Mod chance trigger input | Cues whole sequencer to mute/unmute on next 16 | Cues that row to change mute status on next 16  |
 | **Shift + Mute** | - | - | Clear that row of all trigs |
@@ -150,10 +150,7 @@ The following views allow for control of macro level features of the sequencer.
 
 In order to ensure the individual sequencers play nicely in concert with eachother, We have included a configuration page that adjusts a number of parameters like clock division allowing you to change many sequencers’ parameters at the same time. 
 
-The top three rows show the available clock divisions, with a coloured block denoting the selected clock division for each sequencer. Note that the coloured blocks correspond to the colours for each sequencer from the [sequencer selection](#sequencer-selection), where the top bar that counts bars is coloured according to the sequencer you have chosen. From top to bottom the available clock divisions are:
-- Full speed
-- Half speed
-- Quarter speed
+The top three rows show the available clock divisions, with a coloured block denoting the selected clock division for each sequencer. Note that the coloured blocks correspond to the colours for each sequencer from the [sequencer selection](#sequencer-selection), where the top bar that counts bars is coloured according to the sequencer you have chosen. From top to bottom the available clock divisions are full speed, half speed, and quarter speed.
 
 The next row down is empty, but the following row is a toggle to decide whether the sequencer can probabilistically drop cut that sequencer for the last 8 bars, 4 bars, 1 bar, 8 steps or 4 steps every 16 bars. If the sequencer is orange in this row, then there is a chance it may get chosen for a drop.
 
@@ -186,73 +183,15 @@ If the original sequence was therefore transposed to the 5th chord (G) the resul
 
 <img src="https://gitlab.com/malleable808/sequencer/uploads/168699822bd1ee620adc288b987b6e5b/PXL_20210318_193352163.jpg" alt="chordprogressionsequencer" width="700px"/>
 
+The vertical position of the blocks lit up indicate the chord position, and the horizontal scale represents time, divided into bars, such that one block is one bar (in future we may add clock division to this section in order to allow this resolution to change). The colours represent slightly different chord options, as described in the table below:
 
-<style>
-.lcbuttonstatus {
-    margin-top: 10px;
-    display: flex;
-}
-.lcbuttontable {
-    margin-left: 0px;
-    margin-right: auto;
-}
-</style>
-
-<div class="cpbuttonstatus">
-<div class="lc-status-img">
-    <img src="https://gitlab.com/malleable808/sequencer/uploads/b7421272c0dfb7942729247396540552/LCbuttons.jpg" alt="LC-status-buttons" width="100px"/>
-</div>
-<div class="spacer"></div>
-    <div clas="cpbuttontable">
-        The vertical position of the blocks lit up indicate the chord position, and the horizontal scale represents time, divided into bars, such that one block is one bar (in future we may add clock division to this section in order to allow this resolution to change). The colours represent slightly different chord options, as described in the table below:
-    </div>
-</div>
-<br>
 | LC button | Chord progression sequencer input |
-|-|-|
+| --- | --- |
 | **Device (Shift)** | 2nd inversion (-1 octave on the third row) - Yellow |
 | **Mute** | 3rd inversion (-1 octave on the 5th row) - Red |
 | **Solo** | Random choice (-1 octave on one random row, but not top or bottom row) - Blue |
 | **Record Arm** | Random Chance (randomly choose between the three above states) - Green |
 
-
-
-<!-- 
-<style>
-.cpseq {
-    text-align: center;
-    display: flex;
-}
-.cpseqtable {
-    margin-left: 0px;
-	margin-right: auto;
-    text-align: center;
-}
-.cpseqtable th:{text-align: center;}
-.cpseqtable tr:nth-child(1) { background: #f5bc42; }
-.cpseqtable tr:nth-child(2) { background: #f54242; }
-.cpseqtable tr:nth-child(3) { background: #4257f5; }
-.cpseqtable tr:nth-child(4) { background: #51f542; }
-</style>
-
-<div class="cpseq">
-<div class="lc-status-img">
-	<img src="https://gitlab.com/malleable808/sequencer/uploads/b7421272c0dfb7942729247396540552/LCbuttons.jpg" alt="LC-status-buttons" width="60"/>
-</div>
-<div class="spacer"></div>
-<div class="spacer"></div>
-<div clas="cpseqtable">
-
-| LC button | Chord progression sequencer input |
-|-|-|
-| **Device (Shift)** | 2nd inversion (-1 octave on the third row) - Yellow |
-| **Mute** | 3rd inversion (-1 octave on the 5th row) - Red |
-| **Solo** | Random choice (-1 octave on one random row, but not top or bottom row) - Blue |
-| **Record Arm** | Random Chance (randomly choose between the three above states) - Green |
-
-</div>
-</div>
- -->
 #### Chord progression editor
 Edits which degrees of the scale are affected by the chord progression, per sequencer (yellow means that row is affected, no light means that row is not affected), with a column per sequencer, so that different sequencers can be affected differently.
 
@@ -446,84 +385,10 @@ This default view is the equivalent view to the note-input view for the synthesi
 
 To avoid confusion each drum sound has a different colour mute light as shown in the table & images below and there is a status light on the 5th channel of the relevant launch control which lights orange when in the alternate hats/cymbal view (see above images).
 
-<style>
-.heatMap {
-    text-align: center;
-    display: flex;
-}
-.heatMapA {
-    margin-left: auto;
-	margin-right: 0px;
-    text-align: center;
-}
-.heatMapA th {
-	background: grey;
-	text-align: center;
-}
-.heatMapA tr:nth-child(1) { background: #1997d1; text-align: center; }
-.heatMapA tr:nth-child(2) { background: #1997d1; text-align: center; }
-.heatMapA tr:nth-child(3) { background: #1997d1; text-align: center; }
-.heatMapA tr:nth-child(4) { background: #19d17b; text-align: center; }
-.heatMapA tr:nth-child(5) { background: #19d17b; text-align: center; }
-.heatMapA tr:nth-child(6) { background: #d11944; text-align: center; }
-.heatMapA tr:nth-child(7) { background: #d11944; text-align: center; }
-.heatMapA tr:nth-child(8) { background: #d11944; text-align: center; }
-.heatMapB {
-    margin-left: 0px;
-	margin-right: auto;
-    text-align: center;
-}
-.heatMapB th {
-	background: grey;
-	text-align: center;
-}
-.heatMapB tr:nth-child(1) { background: #19d17b; text-align: center; }
-.heatMapB tr:nth-child(2) { background: #19d17b; text-align: center; }
-.heatMapB tr:nth-child(3) { background: #19d17b; text-align: center; }
-.heatMapB tr:nth-child(4) { background: #19d17b; text-align: center; }
-.heatMapB tr:nth-child(5) { background: #d11944; text-align: center; }
-.heatMapB tr:nth-child(6) { background: #d11944; text-align: center; }
-.heatMapB tr:nth-child(7) { background: #1997d1; text-align: center; }
-.heatMapB tr:nth-child(8) { background: #1997d1; text-align: center; }
-
-.spacer {
-	margin-left: 12px
-}
-</style>
-
-<div class="heatMap">
-<div class="heatMapA">
-
-| Main View | 
-| -- |
-| HT |
-| MT |
-| LT |
-| SD1 |
-| SD2 |
-| BD1 |
-| BD2 |
-| Boom-tsk |
-
+<div class="centre_img" align="center">
+    <img src="/mdma/assets/drummutes.jpeg" width=300px margin-bottom=10px margin-top=10px/>
 </div>
 
-<div class="spacer"></div>
-
-<div class="heatMapB">
-
-| Alternate View | 
-| -------------- |
-| RC |
-| CC |
-| OH |
-| CH |
-| CP1 |
-| CP2 |
-| RS1 |
-| RS2 |
-
-</div>
-</div>
 
 You will see that there are two rows for the kick and snare, clap and rimshot. The clap and rimshot send two different midi notes enabling you to play all of the sounds of the TR-8 (assuming you pick the correct instrument). All of thse rows have two separate velocity inputs (see more in the [next section](#tr-8-velocity-arps)), enabling you to add in ghost notes (by default the second row is set to a lower velocity than the first).
 
