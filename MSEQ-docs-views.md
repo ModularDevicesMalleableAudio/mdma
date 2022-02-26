@@ -97,7 +97,7 @@ These buttons light up to show the selected sequencer, the step position, and th
 
 Each one of the sequencers corresponds to a MIDI channel, with the Raspberry PI able to send up to 16 different sets of MIDI signals (we use 14 currently), and player 1 and player 2 can edit these different signals independently of one another. 
 
-The sequencers are set up such that 1-7, and 9-12 are traditional synth sequencers, 8 is a modular style stage sequencer that can generate more complex rhythms and patterns, whilst sequencers 13-15 are set up for drum tracks. Channels 8 & 16 is not really a sequencer at all, but rather a set of global/macro utility views.
+The sequencers are set up such that 1-7 and 9-12 are traditional polyphonic sequencers designed for synths, whilst sequencers 13-15 are set up for drum tracks. Channels 8 & 16 is not really sequencers at all, but rather a set of global/macro utility views.
 
 ### View selection
 The right hand launchpad of a pair has a vertical row of buttons on the right hand side. These buttons control the selection of views that are available for each sequencer. 
@@ -396,7 +396,7 @@ This default view is the equivalent view to the note-input view for the synthesi
 To avoid confusion each drum sound has a different colour mute light as shown in the table & images below and there is a status light on the 5th channel of the relevant launch control which lights orange when in the alternate hats/cymbal view (see above images).
 
 <div class="centre_img" align="center">
-    <img src="/mdma/assets/drummutes.jpeg" width="45%" margin-bottom=10px margin-top=10px/>
+    <img src="/mdma/assets/drummutes.jpeg" width="40%" margin-bottom=10px margin-top=10px/>
 </div>
 
 
@@ -447,36 +447,6 @@ The volca drum tuned sequencers both have an octave tree, and you can edit them 
 
 #### Velocity sequencer
 Exactly the same thing as the velocity sequencers for the synth views. There are two of these views, one each for the tuned volca drum sequencers.
-
-## Modular stage sequencer
-16 step grids are fine. But sometimes you want that polyrhythmic bleep bloop. 
-
-This view is an attempt to make a stage sequencer that is a homage to the intelijel metropolis in terms of functionality. The launchpad UI is a bit trickier than the other sequencers, but you can get some wild patterns out of it.
-
-The idea is that there are two 8-stage sequencers, with each stage consisting of up to 22 steps each (stage length is variable, but not every value is possible), and a last step functionality allowing for the 8 stages to reset after varying lengths (can be as high as 16,32,64,128 steps).
-
-Each stage has a mode, which is either a rest, a single held note, a repeated note for each step in the stage, or one single note for the first step of the stage, followed by rests until the next stage.
-
-The sequencers are assignable. This means that they can take over the operation of one of the other sequencers in the MSEQ. This is set in the config view.
-
-For each view (except the config view), stage sequencer A is on the left, and stage sequencer B is on the right. In the config view A is on the top half, and B is the lower half.
-
-#### Note input
-This view allows you to pick the notes that the stage sequencer will play at each one of the 8 stages. NB that depending on the lengths of each stage, and the chosen last step value, you might not get to the later stages.
-
-#### Stage / Modes
-
-The stage section is the top half. Stages are either 1,2,3, or longer. If they are longer (the top value), then they are set on the subsequent Length Extension view.
-
-The modes section specifies the mode for each stage. The mode is either a rest, a single held note, a repeated note for each step in the stage, or one single note for the first step of the stage, followed by rests until the next stage.
-
-#### Length Extension
-Length extension view allows you to set longer stage lengths.
-	
-#### Config
-In this view, control for stage sequencer A is on the top 4 rows, and controls for B are on the lower half.
-
-Set the sequencer to take over with the stage sequencer here -that is the top two rows (white background), with the selected sequencer highlighted pink (?). Then also set the last step for the stage sequencer in the subsequent two rows (with 16 possible options, and the selected one being green).
 
 # Launchcontrol views
 ## Standard views
