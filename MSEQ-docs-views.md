@@ -10,7 +10,7 @@ permalink: /documentation/MSEQ/manual
 
 The MSEQ has an array of sequencing capabilities, including 11 polyphonic sequencers, 3 drum sequencers, macro level sequencing of chord progressions, modulation sequencing options for sequencer parameters, MIDI note parameters, and specific control change midi messages. It forms the heart of our improvised livesets, and is the workhorse of our studio and because it is open source - it can power yours too!
 
-<img src="https://gitlab.com/malleable808/sequencer/uploads/eb46c69396646def04ee2be987fb31d8/live.jpeg" alt="my-hands-moody-lighting" width="700"/>
+<img src="https://gitlab.com/malleable808/sequencer/uploads/eb46c69396646def04ee2be987fb31d8/live.jpeg" alt="my-hands-moody-lighting" width="100%"/>
 
 The MSEQ is based on 11 8-note polyphonic 16-step sequencers (where each of the 8 rows corresponds to a note, controlling 11 synthesisers), and 3 16-step drum sequencers (where each row corresponds to a drum voice).
 
@@ -45,8 +45,14 @@ In user views 1 and 2, if you press shift and one the top/bottom button, it will
 .lcbuttonstatus {
     margin-top: 10px;
     display: flex;
+    margin-right: 15px;
 }
 .lcbuttontable {
+    margin-left: 0px;
+    margin-right: auto;
+}
+.lc-status-img {
+    width: 80%;
     margin-left: 0px;
     margin-right: auto;
 }
@@ -54,7 +60,7 @@ In user views 1 and 2, if you press shift and one the top/bottom button, it will
 
 <div class="lcbuttonstatus">
 <div class="lc-status-img">
-    <img src="https://gitlab.com/malleable808/sequencer/uploads/b7421272c0dfb7942729247396540552/LCbuttons.jpg" alt="LC-status-buttons" width="100px"/>
+    <img src="https://gitlab.com/malleable808/sequencer/uploads/b7421272c0dfb7942729247396540552/LCbuttons.jpg" alt="LC-status-buttons" width="100%"/>
 </div>
 <div class="spacer"></div>
 <div clas="lcbuttontable">
@@ -64,17 +70,21 @@ Beyond the normal pressing of buttons, the launch control provides you with 4 ad
 </div>
 <br>
 
-| LC button | [Trig Input](#note-trigger-input) | [LC Bottom Button](#lc-bottom-buttons) | [Row Mute](#mutes) |
-|-|-|-|-|
-| **Device (Shift)** | Percentage chance trigger input | Controls sequencer octave up/down | - |
-| **Mute** | Inverse mod chance (1-3:4) | Controls jam keyboard octave up/down | Toggles drone mute status for that row |
-| **Solo** | Tied note trigger input | - | Toggles legato mute status for that row |
-| **Record Arm** | Mod chance trigger input | Cues whole sequencer to mute/unmute on next 16 | Cues that row to change mute status on next 16  |
-| **Shift + Mute** | - | - | Clear that row of all trigs |
-| **Shift + Solo** | - | - | - |
-| **Record Arm + Shift** | Inverse mod chance trigger input | - | - |
-| **Record Arm + Mute** | - | - | Cues a held note on or off on the next 16 |
-| **Record Arm + Solo** | - | - | Cues a legato on or off on the next 16 |
+| [LC button](#launchcontrol-global-control-reference) | [Trig Input](#note-trigger-input) | [LC top row Button](#lc-bottom-buttons) | [LC bottom row Button](#lc-bottom-buttons) | [Row Mute](#mutes) |
+| --- | --- | --- | --- | --- |
+| **No Modifier** | Standard trigger input | Cues channel to mute/unmute at the end of this bar | Cues channel to mute at the next sensible point and re-cues for the end of the 16th bar | Mute/unmutes row immediately |
+| **Device (Shift)** | Percentage chance trigger input | Channel octave up | Channel octave down |  - |
+| **Mute** | Inverse mod chance (1-3:4) | Channel Jam keyboard octave up | Channel Jam keyboard octave down | Toggles drone mute status for that row |
+| **Solo** | Tied note trigger input | - | - | Toggles legato mute status for that row |
+| **Record Arm** | Mod chance trigger input | Cues whole sequencer to mute/unmute on next 16 | - |  Cues that row to change mute status on next 16  |
+| **Shift + Mute** | - | - | - | Clear that row of all trigs |
+| **Shift + Solo** | - | - | Cue when next appropriate a high-pass filter until the next 16 for that channel | - |
+| **Record Arm + Shift** | Inverse mod chance trigger input | - | Cue when next appropriate Flanger/other FX controlled by CC until the next 16 for that channel | - |
+| **Record Arm + Mute** | - | - | - | Cues a held note on or off on the next 16 |
+| **Record Arm + Solo** | - | - | - | Cues a legato on or off on the next 16 |
+
+<br> 
+In future: Shift + Solo / Shift + Record Arm for row FX and recue, and shift row mute and re-cue will be implemented to allow for more fine grain control.
 
 ## Launchpad global controls
 
@@ -98,9 +108,9 @@ See below for a basic set of views for a synthesiser on the left, and then a sim
 
 <table border="0">
  <tr>
-    <td><img src="https://gitlab.com/malleable808/sequencer/uploads/d221cfb186a3094ba9a4b170cd6ed162/viewselection.jpeg" alt="right-column-buttons" width="345"/></td>
+    <td><img src="https://gitlab.com/malleable808/sequencer/uploads/d221cfb186a3094ba9a4b170cd6ed162/viewselection.jpeg" alt="right-column-buttons" width="98%"/></td>
     <td>
-	<img src="https://gitlab.com/malleable808/sequencer/uploads/ef0d1706c617eef647926c12caca5a85/viewselect_cc.jpeg" alt="right-column-buttons-with-cc" width="345"/>
+	<img src="https://gitlab.com/malleable808/sequencer/uploads/ef0d1706c617eef647926c12caca5a85/viewselect_cc.jpeg" alt="right-column-buttons-with-cc" width="98%"/>
     </td>
  </tr>
 </table>
@@ -146,7 +156,7 @@ The following views allow for control of macro level features of the sequencer.
 
 #### Clock division & Chord progression config
 
-<img src="https://gitlab.com/malleable808/sequencer/uploads/2c3af88ea95d135d2e1981cd15db1e0a/clockdiv.jpg" alt="cpconfig" width="700px"/>
+<img src="https://gitlab.com/malleable808/sequencer/uploads/2c3af88ea95d135d2e1981cd15db1e0a/clockdiv.jpg" alt="cpconfig" width="100%"/>
 
 In order to ensure the individual sequencers play nicely in concert with eachother, We have included a configuration page that adjusts a number of parameters like clock division allowing you to change many sequencers’ parameters at the same time. 
 
@@ -181,7 +191,7 @@ For example. If you are having a sequence that plays C E G F on repeat. The 1st,
 
 If the original sequence was therefore transposed to the 5th chord (G) the resulting notes from the sequencer would be G B D F. 
 
-<img src="https://gitlab.com/malleable808/sequencer/uploads/168699822bd1ee620adc288b987b6e5b/PXL_20210318_193352163.jpg" alt="chordprogressionsequencer" width="700px"/>
+<img src="https://gitlab.com/malleable808/sequencer/uploads/168699822bd1ee620adc288b987b6e5b/PXL_20210318_193352163.jpg" alt="chordprogressionsequencer" width="100%"/>
 
 The vertical position of the blocks lit up indicate the chord position, and the horizontal scale represents time, divided into bars, such that one block is one bar (in future we may add clock division to this section in order to allow this resolution to change). The colours represent slightly different chord options, as described in the table below:
 
@@ -195,7 +205,7 @@ The vertical position of the blocks lit up indicate the chord position, and the 
 #### Chord progression editor
 Edits which degrees of the scale are affected by the chord progression, per sequencer (yellow means that row is affected, no light means that row is not affected), with a column per sequencer, so that different sequencers can be affected differently.
 
-<img src="https://gitlab.com/malleable808/sequencer/uploads/dae060fbc04e51480fe53676044b531f/WhatsApp_Image_2021-03-19_at_13.47.32.jpeg" alt="chordedit" width="700px"/>
+<img src="https://gitlab.com/malleable808/sequencer/uploads/dae060fbc04e51480fe53676044b531f/WhatsApp_Image_2021-03-19_at_13.47.32.jpeg" alt="chordedit" width="100%"/>
 
 #### Chord Progression Octave Tree
 
@@ -206,7 +216,7 @@ In swing view you can set a coarse amount of swing for each sequencer using the 
 
 The launchpad shows the coarse amount of swing, with the 5th row being the default - 50% swing when fine control is untouched. As you turn the knob, it adds positive swing. To get negative swing, move the coarse setting down one for that sequencer, again moving the knob to find a groove that matches what you are looking for. 
 
-<img src="https://gitlab.com/malleable808/sequencer/uploads/f872d93fe2f79cba6ed7c43fe507b6fe/PXL_20210318_193356098.jpg" alt="swing" width="700px"/>
+<img src="https://gitlab.com/malleable808/sequencer/uploads/f872d93fe2f79cba6ed7c43fe507b6fe/PXL_20210318_193356098.jpg" alt="swing" width="100%"/>
 
 #### Lights Off View
 
@@ -233,41 +243,41 @@ There are various types of trigs which can hit conditionally (mod chance or % ch
 
 As an example, here is an example of how triggers are added to the note trigger view, Assuming we are in C minor see [key/scale/chord progression view for details](#key-/-Scale-/-Chord-Progression-selection). First we start with a standard note trigger (will hit every time) on the 1st, 5th.9th and 13th step, playing G. Then we have percentage chance triggers on steps 1,4,7,10,13,15 for note B♭.
 
-<img src="https://gitlab.com/malleable808/sequencer/uploads/fc41a05019771212dc5ec8d050bc9a78/81350b3c-455a-4845-9f22-6eeafe9df0c6.jpg" alt="Step1" width="700px"/>
+<img src="https://gitlab.com/malleable808/sequencer/uploads/fc41a05019771212dc5ec8d050bc9a78/81350b3c-455a-4845-9f22-6eeafe9df0c6.jpg" alt="Step1" width="100%"/>
 
 Next we mute all bar the first of the percentage chance triggers, so that they remain lit up, but are disabled.
 
-<img src="https://gitlab.com/malleable808/sequencer/uploads/448df5c88547240cdd33e89814037d57/ff79d732-7748-49df-bdf6-0d0d528b01d6.jpg" alt="Step2" width="700px"/>
+<img src="https://gitlab.com/malleable808/sequencer/uploads/448df5c88547240cdd33e89814037d57/ff79d732-7748-49df-bdf6-0d0d528b01d6.jpg" alt="Step2" width="100%"/>
 
 Then, we add some tied notes on note E♭, which are shown to sustain for the number of steps of the whole yellow and white section (they are still affected by the duty set for that sequencer, but let's assume for now duty is set to 100%). So the first trigger starts on step 1 and holds until step 5, then again from 9-11 and from 13-15.
 
-<img src="https://gitlab.com/malleable808/sequencer/uploads/b10d64b1829140086a08d2c312eb788c/554bd288-b713-42bb-a0f2-c1b240285cfe.jpg" alt="Step3" width="700px"/>
+<img src="https://gitlab.com/malleable808/sequencer/uploads/b10d64b1829140086a08d2c312eb788c/554bd288-b713-42bb-a0f2-c1b240285cfe.jpg" alt="Step3" width="100%"/>
 
 Next, we add some 1:2 mod chance on D (steps 1 and 7), and some 2:1 mod chance on C (steps 4 and 10). So we play D on steps 1 and 7 on the first bar, but C on steps 2 and 4 of the second bar.
 
-<img src="https://gitlab.com/malleable808/sequencer/uploads/14aa29d885732c15987aa2700ab7852b/bbd05bf6-aeb9-4262-a641-91219cee6d1f.jpg" alt="Step4" width="700px"/>
+<img src="https://gitlab.com/malleable808/sequencer/uploads/14aa29d885732c15987aa2700ab7852b/bbd05bf6-aeb9-4262-a641-91219cee6d1f.jpg" alt="Step4" width="100%"/>
 
 Adding more mod chance on C - the blue steps shown on step 12, 14, and 16 are triggered on 4:4 (every fourth bar), 8:8 (every eighth bar), and 16:16 (every 16th bar) respectively.
 
-<img src="https://gitlab.com/malleable808/sequencer/uploads/926de2bcf629e02dc5547641ee005b61/2c03f8bf-6e25-43de-b3dc-3a75d5e5cb46.jpg" alt="Step5" width="700px"/>
+<img src="https://gitlab.com/malleable808/sequencer/uploads/926de2bcf629e02dc5547641ee005b61/2c03f8bf-6e25-43de-b3dc-3a75d5e5cb46.jpg" alt="Step5" width="100%"/>
 
 Swapping mod chance for inverse mod chance on  C means that steps 12, 14, and 16 now trigger every time, _except_ the fourth, eighth or sixteenth bars respectively. Notice the colour has changed from light blue -> blue -> dark blue, to orange -> deep orange -> red.
 
-<img src="https://gitlab.com/malleable808/sequencer/uploads/7c753b12422372015aa6cebdb600c312/5a48959c-cdcf-4cef-8105-a984d37c6f19.jpg" alt="Step6" width="700px"/>
+<img src="https://gitlab.com/malleable808/sequencer/uploads/7c753b12422372015aa6cebdb600c312/5a48959c-cdcf-4cef-8105-a984d37c6f19.jpg" alt="Step6" width="100%"/>
 
 #### 16 step duty sequencer
 So far you have seen that in the default note trigger view, different notes can be triggered on different steps, but we also allow for sequencing of duty to determine variation in note length. The first of the selectable views on the right hand of the launchpad allows you to change the duty of each step. Each step has a duty length as determined by the green/yellow light per step. 
 
 The total duty time is dictated by a combination of the global duty knob for that sequencer (as determined on the launch control) and then factored by the step duty amount. This allows you to keep the relative duty of each step when adjusting for shorter or longer notes with the launch control duty knob.
 
-<img src="https://gitlab.com/malleable808/sequencer/uploads/eb78543edadbf49756248221ba371dff/duty.jpeg" alt="Duty Sequencer" width="700px"/>
+<img src="https://gitlab.com/malleable808/sequencer/uploads/eb78543edadbf49756248221ba371dff/duty.jpeg" alt="Duty Sequencer" width="100%"/>
 
 #### 16 step velocity sequencer
 The second selectable view is the Duty view which controls the velocity of each step. This is identified by the blue/red light per step 
 
 This view interacts with the global velocity knob for this sequencer  in the same way as the duty knob in duty view. Allowing you to keep the relative velocity between steps when increasing or decreasing global velocity. This means that you can have a nuanced, accented pattern, and play this at different velocities.
 
-<img src="https://gitlab.com/malleable808/sequencer/uploads/ffc38898da72c1539f426e5696c2de4d/velocity.jpeg" alt="Velocity Sequencer" width="700px"/>
+<img src="https://gitlab.com/malleable808/sequencer/uploads/ffc38898da72c1539f426e5696c2de4d/velocity.jpeg" alt="Velocity Sequencer" width="100%"/>
 
 #### Octave tree
 Although shift-pressing the bottom launchcontrol buttons allows for wholesale control over the octave for any given sequencer, sometimes you will want a spread of notes beyond the single octave that you are working in.
@@ -278,7 +288,7 @@ The images below show the octave tree initially with all rows set to the default
 
 In this way, a pattern on a sequencer can be partially shifted up and down octaves reasonably quickly and easily to give more interesting options!
 
-<img src="https://gitlab.com/malleable808/sequencer/uploads/2a349aa2da014609a03200b1ec17189f/PXL_20210318_192238746.jpg" alt="an octave tree" width="700px"/>
+<img src="https://gitlab.com/malleable808/sequencer/uploads/2a349aa2da014609a03200b1ec17189f/PXL_20210318_192238746.jpg" alt="an octave tree" width="100%"/>
 
 
 Then, on the right hand launchpad, we have a "meta-sequencer", which will push up or down the row it is on by a number of octaves, with each button representing four steps, such that the first square is steps 1-4, then 5-8, then 9-12, then 13-16, and then it loops back round into a second bar, repeating the pattern. Green squares indicate positive 4-step octave modifiers, and red squares indicate negative 4-step octave modifiers. 
@@ -312,11 +322,11 @@ There are a range of defaults that allow for thirds/fourths/fifths...etc, which 
 
 Here we can see an arp that goes upwards over three notes.
 
-<img src="https://gitlab.com/malleable808/sequencer/uploads/e836529d4469dc992f5b4ca33e0c1a49/ce2a2874-cdbc-462d-aba5-19479499da66.jpg" alt="arp up" width="700px"/>
+<img src="https://gitlab.com/malleable808/sequencer/uploads/e836529d4469dc992f5b4ca33e0c1a49/ce2a2874-cdbc-462d-aba5-19479499da66.jpg" alt="arp up" width="100%"/>
 
 And here is the same arp set to downwards over three notes.
 
-<img src="https://gitlab.com/malleable808/sequencer/uploads/a6ceec7e3ca3cb382cff1a891d4a127b/bc325721-14c2-40f6-bc67-1bf0fe3bb0ad.jpg" alt="arp down" width="700px"/>
+<img src="https://gitlab.com/malleable808/sequencer/uploads/a6ceec7e3ca3cb382cff1a891d4a127b/bc325721-14c2-40f6-bc67-1bf0fe3bb0ad.jpg" alt="arp down" width="100%"/>
 
 We call this view arps, but it isn't really. It's more of a way of cycling through notes. By way of explaining the above images, lets imagine that we have a single trigger for that row, on the first step. So on the begining of every bar, the sequencer plays first the red note, then the orange note, then the yellow note, then the red note again. In the top image, red is the bottom, and we progress upwards, and on the bottom image, red is the top and we progress downwards. So far, so dull. But even in this case, if you had two other notes on the first step, then you can get to a chord which changes each time. 
 
@@ -377,8 +387,8 @@ This default view is the equivalent view to the note-input view for the synthesi
 <div class="centre_2img" align="center">
 <table border="0">
  <tr>
-    <td><img src="https://gitlab.com/malleable808/sequencer/uploads/0fdd8d07e0d7febf44c9ab86f4ec93bc/lc2.jpg" alt="main-tr8-lc" width="345"/></td>
-    <td><img src="https://gitlab.com/malleable808/sequencer/uploads/9160f36c85a548bd6210aaf30c38608e/lc1.jpg" alt="alt-tr8-lc" width="345"/></td>
+    <td><img src="https://gitlab.com/malleable808/sequencer/uploads/0fdd8d07e0d7febf44c9ab86f4ec93bc/lc2.jpg" alt="main-tr8-lc" width="98%"/></td>
+    <td><img src="https://gitlab.com/malleable808/sequencer/uploads/9160f36c85a548bd6210aaf30c38608e/lc1.jpg" alt="alt-tr8-lc" width="98%"/></td>
  </tr>
 </table>
 </div>
@@ -386,16 +396,16 @@ This default view is the equivalent view to the note-input view for the synthesi
 To avoid confusion each drum sound has a different colour mute light as shown in the table & images below and there is a status light on the 5th channel of the relevant launch control which lights orange when in the alternate hats/cymbal view (see above images).
 
 <div class="centre_img" align="center">
-    <img src="/mdma/assets/drummutes.jpeg" width=300px margin-bottom=10px margin-top=10px/>
+    <img src="/mdma/assets/drummutes.jpeg" width="45%" margin-bottom=10px margin-top=10px/>
 </div>
 
 
 You will see that there are two rows for the kick and snare, clap and rimshot. The clap and rimshot send two different midi notes enabling you to play all of the sounds of the TR-8 (assuming you pick the correct instrument). All of thse rows have two separate velocity inputs (see more in the [next section](#tr-8-velocity-arps)), enabling you to add in ghost notes (by default the second row is set to a lower velocity than the first).
 
-<img src="https://gitlab.com/malleable808/sequencer/uploads/c82bed071283ff6e6a869b283341d93b/PXL_20210318_192013904.jpg" alt="main-tr8-lp" width="700px"/>
+<img src="https://gitlab.com/malleable808/sequencer/uploads/c82bed071283ff6e6a869b283341d93b/PXL_20210318_192013904.jpg" alt="main-tr8-lp" width="100%"/>
 Another distinction is the prefilled 4-4 kick and offbeat closed hat row that is present on the bottom row of the main view. On unmuting this row, all other TR-8 rows that are playing will be muted, bringing the drums back to something square.
 
-<img src="https://gitlab.com/malleable808/sequencer/uploads/39c4498fc16d77127fde3d4c2ce5586b/PXL_20210318_192024573.jpg" alt="alt-tr8-lp" width="700px"/>
+<img src="https://gitlab.com/malleable808/sequencer/uploads/39c4498fc16d77127fde3d4c2ce5586b/PXL_20210318_192024573.jpg" alt="alt-tr8-lp" width="100%"/>
 
 #### TR-8 velocity arps
 16 step velocity sequencers are good, but we found them a bit too precise for adding interest to drum patterns quickly. The TR-8 view has instead got a series of velocity arps that work in a very similar way to the note arps and CC arps.  
@@ -408,7 +418,7 @@ This is a 16 step sequencer that applies a global velocity scaling to all of the
 
 The UI is shown below, with a 16 step sequencer that sets the level of the FX at each step (the bottom row is OFF), so here we have a pattern with two steps on in steps 3 & 4, then off until the last 8 steps where the FX level increases over the 8 steps.
 
-<img src="https://gitlab.com/malleable808/sequencer/uploads/fce468863193ab103e1de7461c22b709/PXL_20210318_192042274.jpg" alt=TR8_accent width="700px"/>
+<img src="https://gitlab.com/malleable808/sequencer/uploads/fce468863193ab103e1de7461c22b709/PXL_20210318_192042274.jpg" alt=TR8_accent width="100%"/>
 
 ### Volca drum customised views
 We also have a volca drum, which is also an incredibly powerful piece of kit, hamstrung by the tiny and fiddly onboard sequencer. The volca drum needed a different set of requirements to the TR-8, and so there are some small changes that should be noted here. 
