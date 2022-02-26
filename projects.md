@@ -26,7 +26,7 @@ First out of the lab, a [Buchla 296e inspired filterbank / spectral transfer / v
 
 More detail and videos to come!
 
-[malleable-808-sequencer]: https://malleable-808-sequencer.readthedocs.io
+[malleable-808-sequencer]: /mdma/documentation/MSEQ/
 [mseq-gitlab]: https://gitlab.com/malleable808/sequencer
 [mfb-github]: https://github.com/ModularDevicesMalleableAudio/MFB
 [daisy-url]: https://www.electro-smith.com/daisy

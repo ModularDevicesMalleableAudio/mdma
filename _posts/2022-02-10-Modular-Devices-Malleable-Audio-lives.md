@@ -14,5 +14,5 @@ There will be more on the sequencer here in future, but for 2022 my focus is mov
 
 The sequencer became known as the `malleable sequencer` (or `MSEQ`), and now this is Modular Devices Malleable Audio - bringing a D.I.Y attitude to creating a range of inter-operable & cross-format devices and software for making and controlling noise.
 
-[malleable-808-sequencer]: https://malleable-808-sequencer.readthedocs.io
+[malleable-808-sequencer]: /mdma/documentation/MSEQ/
 [mseq-gitlab]: https://gitlab.com/malleable808/sequencer
