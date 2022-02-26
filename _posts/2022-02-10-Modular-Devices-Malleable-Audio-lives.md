@@ -1,9 +1,9 @@
 ---
-layout: post
-title:  "Hello World!"
-date:   2022-02-13 17:00:00 +0000
+layout:     post
+title:      "Hello World!"
+date:       2022-02-13 17:00:00 +0000
 categories: news
-published: true
+published:  true
 ---
 
 I'm excited to open the website with for Modular Devices Malleable Audio. 
