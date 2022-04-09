@@ -1,5 +1,5 @@
 ---
-title: Home
+title: MDMA
 layout: home
 ---
 
